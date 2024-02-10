@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import dataList
+from . import views
 
 urlpatterns = [
-    path('', dataList, name=dataList)
+    path('', views.firebaseConfigList, name="firebase-Config")
 ]
