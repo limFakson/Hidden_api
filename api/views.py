@@ -1,3 +1,5 @@
+import json
+
 from django.shortcuts import render
 from django.http import JsonResponse
 
@@ -12,5 +14,5 @@ from .serializers import DataSerializers, FirebaseConfigSerializers
 def firebaseConfigList(request):
     firebaseConfig = FirebaseConfig.objects.all()
     serializer = FirebaseConfigSerializers(firebaseConfig, many=True)
-    
+
     return Response(serializer.data)
